@@ -1,0 +1,20 @@
+# Dicionário para agrupar participantes por tema
+eventos = {}
+
+# Entrada do número de participantes
+n = int(input().strip())
+
+# TODO: Crie um loop para armazenar participantes e seus temas:
+for _ in range(n):
+    informacao = input().strip()
+    lista_dados = informacao.split(",")
+    tema = lista_dados[1].strip()
+    participante = lista_dados[0].strip()
+    if tema not in eventos.keys():
+        eventos[tema] = []
+    eventos[tema].append(participante)
+
+# Exibe os grupos organizados
+for tema, participantes in eventos.items():
+   print(f"{tema}: {', '.join(participantes)}")
+
